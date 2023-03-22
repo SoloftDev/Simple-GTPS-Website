@@ -1,5 +1,5 @@
 <div id="header" align="center">
-  <img src="https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4QdVYkYeDqUJAruBJ3ulTv/f669d5580855861d9778e310c9c376a6/game_logo_small.png" width="100"/>
+  <img src="https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4QdVYkYeDqUJAruBJ3ulTv/f669d5580855861d9778e310c9c376a6/game_logo_small.png" width="500"/>
 </div>
 
 # GTServer
