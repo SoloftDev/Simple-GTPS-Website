@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+<-- Credit to TheIfyThings#2139, if you cant understand the code then you fucking noob (ripoff of ReGrowtopia.com) -->
+	<title>SecretPS: Fun, Social, Communicate</title>
+	<style>
+		body {
+			overflow: hidden;
+		  background-image: url('https://cdn.discordapp.com/attachments/1043832585580712026/1079762161779359804/image.png');
+    background-size: cover;
+    background-position: center -0px;
+    background-repeat: no-repeat;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+		}
+		.logo {
+      position: fixed;
+      top: 18%;
+      left: 50%;
+      transform: translate(-20%, -20%);
+      animation: float 2s ease-in-out infinite, background-fade 2s ease-in-out 1;
+      height: 264px;
+      z-index: 522;
+      user-select: none;
+    }
+    .logo-desc {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+	font-size: 21px;
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+	transform: skew(-20deg);
+	margin-top: -1px;
+  margin-left: -28px;
+	display: inline-block;
+	user-select: none;
+  position: absolute;
+  bottom: 0;
+  transform: skew(-20deg);
+  user-select: none;
+  text-align: center;
+}
+.play-game {
+  position: absolute;
+  top: 86%;
+  left: 50%;
+  font-family: Century Gothic Bold, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px black;
+  outline-offset: 8px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  animation: background-fade 1s ease-in-out;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.play-game:hover {
+  color: yellow;
+}
+
+.play-game:active {
+  outline-offset: 6px;
+}
+
+.play-game:focus {
+  outline: none;
+}
+
+.video-container {
+  position: fixed;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 500px;
+  height: 300px;
+}
+
+.video-container::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -8.98%;
+  width: 120%;
+  height: 120%;
+  background-image: url('https://cdn.discordapp.com/attachments/1044020046080528446/1080109372304261120/20230228_194755.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -5;
+  animation: background-fade 1s ease-in-out;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+}
+.cloud {
+			position: absolute;
+			top: 20%;
+			animation: moveClouds linear infinite;
+			z-index: -1;
+		}
+		.cloud1 {
+			left: 10%;
+			top: 5%;
+			width: 80px;
+			height: 50px;
+			animation-direction: alternate-reverse;
+			z-index: 1;
+		}
+		.cloud2 {
+			left: 30%;
+			top: 30%;
+			width: 120px;
+			height: 70px;
+			animation-direction: alternate;
+			z-index: 3;
+		}
+		.cloud3 {
+			left: 50%;
+			top: 15%;
+			width: 100px;
+			height: 60px;
+
+			animation-direction: alternate-reverse;
+			z-index: 2;
+		}
+    .cloud4 {
+    right: 10%;
+    top: 40%;
+    width: 70px;
+    height: 40px;
+    animation-direction: alternate;
+    z-index: 1;
+    animation: moveClouds 1s linear infinite;
+}
+
+		.cloud5 {
+			right: 30%;
+			top: 60%;
+			width: 200px;
+			height: 100px;
+
+			animation-direction: alternate-reverse;
+			z-index: 2;
+		}
+		.cloud6 {
+			right: 50%;
+			top: 80%;
+			width: 110px;
+			height: 70px;
+
+			animation-direction: alternate;
+			z-index: 3;
+		}
+    .cloud7 {
+			left: 10%;
+			top: 5%;
+      width: 200px;
+			height: 100px;
+			animation-direction: alternate-reverse;
+			z-index: 1;
+		}
+		.cloud8 {
+			left: 30%;
+			top: 30%;
+			width: 120px;
+			height: 70px;
+			animation-direction: alternate;
+			z-index: 3;
+		}
+		.cloud9 {
+			left: 50%;
+			top: 15%;
+			width: 100px;
+			height: 60px;
+
+			animation-direction: alternate-reverse;
+			z-index: 2;
+		}
+		.cloud10 {
+			right: 10%;
+			top: 40%;
+			width: 70px;
+			height: 40px;
+
+			animation-direction: alternate;
+			z-index: 1;
+		}
+		.cloud11 {
+			right: 30%;
+			top: 60%;
+      width: 200px;
+			height: 100px;
+
+			animation-direction: alternate-reverse;
+			z-index: 2;
+		}
+		.cloud12 {
+			right: 50%;
+			top: 80%;
+			width: 110px;
+			height: 70px;
+
+			animation-direction: alternate;
+			z-index: 3;
+		}
+    .cloud13 {
+			right: 10%;
+			top: 60%;
+			width: 200px;
+			height: 100px;
+
+			animation-direction: alternate;
+			z-index: 1;
+		}
+		.cloud14 {
+			right: 30%;
+			top: 80%;
+			width: 90px;
+			height: 50px;
+
+			animation-direction: alternate-reverse;
+			z-index: 2;
+		}
+		.cloud15 {
+			right: 50%;
+			top: 40%;
+			width: 110px;
+			height: 70px;
+
+			animation-direction: alternate;
+			z-index: 3;
+		}
+    .cloud16 {
+			right: 30%;
+			top: 60%;
+      width: 200px;
+			height: 100px;
+
+			animation-direction: alternate-reverse;
+			z-index: 2;
+		}
+		.cloud17 {
+			right: 50%;
+			top: 80%;
+			width: 200px;
+			height: 100px;
+
+			animation-direction: alternate;
+			z-index: 3;
+		}
+    .cloud18 {
+			left: 10%;
+			top: 5%;
+			width: 80px;
+			height: 50px;
+			animation-direction: alternate-reverse;
+			z-index: 1;
+		}
+		.cloud19 {
+			left: 30%;
+			top: 30%;
+			width: 120px;
+			height: 70px;
+			animation-direction: alternate;
+			z-index: 3;
+		}
+		.cloud20 {
+			left: 50%;
+			top: 15%;
+      width: 200px;
+			height: 100px;
+
+			animation-direction: alternate-reverse;
+			z-index: 2;
+		}
+		.cloud21 {
+			right: 10%;
+			top: 40%;
+			width: 70px;
+			height: 40px;
+
+			animation-direction: alternate;
+			z-index: 1;
+		}
+		.cloud22 {
+			right: 30%;
+			top: 60%;
+			width: 90px;
+			height: 50px;
+
+			animation-direction: alternate-reverse;
+			z-index: 2;
+		}
+		.cloud23 {
+			right: 50%;
+			top: 80%;
+			width: 110px;
+			height: 70px;
+
+			animation-direction: alternate;
+			z-index: 3;
+		}
+    .cloud24 {
+			right: 10%;
+			top: 60%;
+			width: 70px;
+			height: 40px;
+
+			animation-direction: alternate;
+			z-index: 1;
+		}
+		.cloud25 {
+			right: 30%;
+			top: 80%;
+			width: 90px;
+			height: 50px;
+
+			animation-direction: alternate-reverse;
+			z-index: 2;
+		}
+		.cloud26 {
+			right: 50%;
+			top: 40%;
+			width: 110px;
+			height: 70px;
+
+			animation-direction: alternate;
+			z-index: 3;
+		}
+@keyframes background-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+	
+    
+		@keyframes float {
+			0% {
+				transform: translate(-50%, -50%) translateY(0);
+			}
+			50% {
+				transform: translate(-50%, -50%) translateY(-10px);
+			}
+			100% {
+				transform: translate(-50%, -50%) translateY(0);
+			}
+		}
+    @keyframes moveClouds2 {
+			0% {
+				left: -20%;
+			}
+			100% {
+				left: 100%;
+			}
+		}
+		.cloud25, .cloud26 {
+			animation: moveClouds 2.5s ease-in infinite;
+		}
+    @keyframes moveClouds2 {
+			0% {
+				left: -20%;
+			}
+			100% {
+				left: 100%;
+			}
+		}
+		.cloud20, .cloud21, .cloud22, .cloud23, .cloud24 {
+			animation: moveClouds 3.5s ease-in infinite;
+		}
+    @keyframes moveClouds2 {
+			0% {
+				left: -20%;
+			}
+			100% {
+				left: 100%;
+			}
+		}
+		.cloud16, .cloud17, .cloud18, .cloud19, .cloud20 {
+			animation: moveClouds 9.5s ease-in infinite;
+		}
+    @keyframes moveClouds1 {
+			0% {
+				left: -20%;
+			}
+			100% {
+				left: 100%;
+			}
+		}
+		.cloud13, .cloud14, .cloud15, .cloud9 {
+			animation: moveClouds 6.5s ease-in infinite;
+		}
+    @keyframes moveClouds1 {
+			0% {
+				left: -20%;
+			}
+			100% {
+				left: 100%;
+			}
+		}
+		.cloud7, .cloud8, .cloud10, .cloud12, .cloud13 {
+			animation: moveClouds 4.6s ease-in infinite;
+		}
+		@keyframes moveClouds {
+			0% {
+				left: -20%;
+			}
+			100% {
+				left: 100%;
+			}
+		}
+		.cloud1, .cloud2, .cloud3, .cloud4, .cloud5, .cloud6 {
+			animation: moveClouds 8.2s ease-in infinite;
+		}
+	</style>
+  
+</head>
+<body>
+	<img class="logo" src="https://cdn.discordapp.com/attachments/1044020046080528446/1078288875547525171/A4BBD290-6A14-4074-A845-0C281EC6BFDB.png" alt="SecretPS logo">
+  <img class="cloud cloud1" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 1">
+	<img class="cloud cloud2" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 2">
+	<img class="cloud cloud3" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 3">
+	<img class="cloud cloud4" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 4">
+  <img class="cloud cloud5" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 5">
+  <img class="cloud cloud6" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 6">
+  <img class="cloud cloud7" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 7">
+	<img class="cloud cloud8" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 8">
+	<img class="cloud cloud9" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 9">
+	<img class="cloud cloud10" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 10">
+  <img class="cloud cloud11" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 11">
+  <img class="cloud cloud12" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 12">
+  <img class="cloud cloud13" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 13">
+  <img class="cloud cloud14" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 14">
+  <img class="cloud cloud15" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 15">
+  <img class="cloud cloud16" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 16">
+  <img class="cloud cloud17" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 17">
+  <img class="cloud cloud18" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 18">
+	<img class="cloud cloud19" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 19">
+	<img class="cloud cloud20" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 20">
+	<img class="cloud cloud21" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 21">
+  <img class="cloud cloud22" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 22">
+  <img class="cloud cloud23" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 23">
+  <img class="cloud cloud24" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 24">
+  <img class="cloud cloud25" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 25">
+  <img class="cloud cloud26" src="https://cdn.discordapp.com/attachments/1043832585580712026/1079759520026333214/cloud_1.png" alt="Cloud 26">
+  <div class="logo-desc">SECRET - PS is a Growtopia Private Server that supports any devices, this server it so awesome there's so many players in this server!</div>
+  <div class="play-game" onclick="window.location.href='https://prestige.kamae.store/'">Website Copyright (C) 2022 SoloftDev</div>
+  <div class="video-container">
+    <iframe width="200" height="200" src="https://www.youtube.com/embed/vVmGi9yJvHo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</body>
+</html>
